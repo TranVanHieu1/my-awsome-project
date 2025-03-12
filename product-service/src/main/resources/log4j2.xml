@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40c{1.} : %m%n%ex
+        </Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+        <!-- Rolling File Appender -->
+        <RollingFile name="FileAppender" fileName="logs/logfile.log"
+                     filePattern="logs/log4j2-demo-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" />
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="1"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- level="WARN" Show WARN and higher -->
+        <!-- level="INFO" Show INFO and higher -->
+        <!-- level="DEBUG" Show DEBUG and higher -->
+        <!-- level="ERROR" Show ERROR and higher -->
+        <Root level="WARN"> <!-- level="WARN" Show WARN and higher -->
+            <AppenderRef ref="ConsoleAppender"/> <!-- Show in Console -->
+            <AppenderRef ref="FileAppender"/> <!-- Show in File -->
+        </Root>
+    </Loggers>
+</Configuration>
+
+<!-- Config theo môi trường -->
+<!--<Configuration name="ConfigTest" status="ERROR" monitorInterval="5">-->
+<!--<Appenders>-->
+
+<!--    <SystemPropertyArbiter propertyName="env" propertyValue="dev">-->
+<!--        <Console name="Out">-->
+<!--            <PatternLayout pattern="%m%n"/>-->
+<!--        </Console>-->
+<!--    </SystemPropertyArbiter>-->
+<!--    <SystemPropertyArbiter propertyName="env" propertyValue="prod">-->
+<!--        <List name="Out">-->
+<!--        </List>-->
+<!--    </SystemPropertyArbiter>-->
+
+<!--</Appenders>-->
+<!--<Loggers>-->
+<!--    <Logger name="org.apache.test" level="trace" additivity="false">-->
+<!--        <AppenderRef ref="Out"/>-->
+<!--    </Logger>-->
+<!--    <Root level="error">-->
+<!--        <AppenderRef ref="Out"/>-->
+<!--    </Root>-->
+<!--</Loggers>-->
+<!--</Configuration>-->

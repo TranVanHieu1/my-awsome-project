@@ -1,0 +1,73 @@
+2024-07-29 15:35:06.996  WARN THV --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-29 15:35:08.407  WARN THV --- [  restartedMain] o.h.o.deprecation                        : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-29 15:35:12.579  WARN THV --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-29 15:35:12.638  WARN THV --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-29 17:40:11.921  WARN THV --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-29 17:40:14.466  WARN THV --- [  restartedMain] o.h.o.deprecation                        : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-29 17:40:23.632  WARN THV --- [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseController': Unsatisfied dependency expressed through field 'courseService': Error creating bean with name 'courseService': Unsatisfied dependency expressed through field 'crashCourseVideoService': Error creating bean with name 'crashCourseVideoService': Unsatisfied dependency expressed through field 'courseService': Error creating bean with name 'courseService': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2024-07-29 17:40:23.807 ERROR THV --- [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   courseController (field private com.ojt.mockproject.service.CourseService com.ojt.mockproject.controller.CourseController.courseService)
+┌─────┐
+|  courseService (field private com.ojt.mockproject.service.CrashCourseVideoService com.ojt.mockproject.service.CourseService.crashCourseVideoService)
+↑     ↓
+|  crashCourseVideoService (field private com.ojt.mockproject.service.CourseService com.ojt.mockproject.service.CrashCourseVideoService.courseService)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2024-07-29 17:41:59.096  WARN THV --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-29 17:42:01.004  WARN THV --- [  restartedMain] o.h.o.deprecation                        : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-29 17:42:09.915  WARN THV --- [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseController': Unsatisfied dependency expressed through field 'courseService': Error creating bean with name 'courseService': Unsatisfied dependency expressed through field 'crashCourseVideoService': Error creating bean with name 'crashCourseVideoService': Unsatisfied dependency expressed through field 'courseService': Error creating bean with name 'courseService': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2024-07-29 17:42:10.094 ERROR THV --- [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   courseController (field private com.ojt.mockproject.service.CourseService com.ojt.mockproject.controller.CourseController.courseService)
+┌─────┐
+|  courseService (field private com.ojt.mockproject.service.CrashCourseVideoService com.ojt.mockproject.service.CourseService.crashCourseVideoService)
+↑     ↓
+|  crashCourseVideoService (field private com.ojt.mockproject.service.CourseService com.ojt.mockproject.service.CrashCourseVideoService.courseService)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2024-07-29 17:44:47.084  WARN THV --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-29 17:44:48.850  WARN THV --- [  restartedMain] o.h.o.deprecation                        : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-29 17:44:57.833  WARN THV --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-29 17:44:57.880  WARN THV --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-29 17:45:44.881  WARN THV --- [nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ojt.mockproject.exceptionhandler.course.CourseException: Course not found]
+2024-07-29 17:45:55.329  WARN THV --- [nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ojt.mockproject.exceptionhandler.account.AccountException: Index 0 out of bounds for length 0]
+2024-07-29 17:46:27.704  WARN THV --- [nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ojt.mockproject.exceptionhandler.course.CourseException: Course not found]
+2024-07-29 17:46:40.078  WARN THV --- [nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ojt.mockproject.exceptionhandler.course.CourseException: Course not found]
+2024-07-29 17:46:46.185  WARN THV --- [nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ojt.mockproject.exceptionhandler.course.CourseException: Course not found]
+2024-07-29 17:46:51.471  WARN THV --- [nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ojt.mockproject.exceptionhandler.course.CourseException: Course not found]
+2024-07-29 17:46:57.254  WARN THV --- [io-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ojt.mockproject.exceptionhandler.course.CourseException: Course not found]
+2024-07-29 17:47:05.740  WARN THV --- [nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ojt.mockproject.exceptionhandler.account.AccountException: Index 0 out of bounds for length 0]
+2024-07-29 17:50:36.766  WARN THV --- [nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ojt.mockproject.exceptionhandler.account.AccountException: Index 0 out of bounds for length 0]
+2024-07-29 17:51:27.801  WARN THV --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-29 17:51:32.011  WARN THV --- [  restartedMain] o.h.o.deprecation                        : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-29 17:51:43.179  WARN THV --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-29 17:51:43.235  WARN THV --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-29 17:52:58.076  WARN THV --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56s726ms661µs100ns).
+2024-07-29 17:52:58.149  WARN THV --- [nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ojt.mockproject.exceptionhandler.account.AccountException: Index 0 out of bounds for length 0]

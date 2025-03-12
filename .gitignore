@@ -1,0 +1,16 @@
+.DS_Store
+**/.env
+**/.DS_Store
+**/node_modules
+**/.idea
+/.idea
+/.idea/sonarlint
+/.idea/**
+
+db
+
+# Ignore sensitive config files
+product-service/src/main/resources/firebase-admin.json
+product-service/src/main/resources/firebase-file-admin.json
+product-service/src/main/resources/application-dev.properties
+product-service/src/main/resources/application-prod.properties
